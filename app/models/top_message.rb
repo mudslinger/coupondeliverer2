@@ -27,11 +27,11 @@ class TopMessage
   def icon
     case self.entry_type
       when "Microsoft.SharePoint.DataService.社長メッセージItem"
-        "/wb/ymticon.png"
+        "wb/ymticon.png"
       when "Microsoft.SharePoint.DataService.専務メッセージItem"
-        "/wb/144icon.png"
+        "wb/144icon.png"
       when "Microsoft.SharePoint.DataService.連絡通達Item"
-        "/wb/hqicon.png"
+        "wb/hqicon.png"
     end
   end
 
