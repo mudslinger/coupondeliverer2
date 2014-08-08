@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     get '/wb/:type/:key(.:format)' => 'topmessages#show',as: :top_messages
   end
   constraints host: 'topmessages2.yamaokaya.com' do
-    get '/wb/:type/:key(.:format)' => 'topmessages#show',as: :top_messages
+    get '/wb/:type/:key(.:format)' => 'topmessages#show',as: :top_messages2
   end
 
   #クーポン配信
