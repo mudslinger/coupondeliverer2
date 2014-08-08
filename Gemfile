@@ -43,4 +43,5 @@ gem 'unicorn'
 
 gem 'newrelic_rpm'
 gem 'redis'
+gem 'redis-rails'
 gem 'rest-client'
