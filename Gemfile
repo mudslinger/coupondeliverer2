@@ -42,3 +42,5 @@ gem 'unicorn'
 # gem 'debugger', group: [:development, :test]
 
 gem 'newrelic_rpm'
+gem 'redis'
+gem 'rest-client'
