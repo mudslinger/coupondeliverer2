@@ -27,11 +27,11 @@ class TopMessage
   def icon
     case self.entry_type
       when "Microsoft.SharePoint.DataService.社長メッセージItem"
-        "images/wb/ymticon.png"
+        "/wb/ymticon.png"
       when "Microsoft.SharePoint.DataService.専務メッセージItem"
-        "images/wb/144icon.png"
+        "/wb/144icon.png"
       when "Microsoft.SharePoint.DataService.連絡通達Item"
-        "images/wb/hqicon.png"
+        "/wb/hqicon.png"
     end
   end
 
@@ -114,6 +114,10 @@ class TopMessage
         return str
       end
     }
+  end
+
+  def new?
+    Time.at(self.updated_at) > 3.days.ago
   end
 
 end
