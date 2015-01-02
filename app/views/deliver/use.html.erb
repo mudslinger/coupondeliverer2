@@ -8,7 +8,7 @@
     </title>
   </head>
   <body style='width:100%;padding:0px;margin:0px;'>
-  	<%if !@expired%>
+  	<%if !@expired || @coupon_code.starts_with?('welcomegyoza')%>
 	    <img src='http://assets.coupon.yamaokaya.com/<%=@coupon_code%>.gif' style='width:100%;' width='100%' />
   	<%else%>
 	    <img src='http://assets.coupon.yamaokaya.com/expired.gif' style='width:100%;' width='100%' />
