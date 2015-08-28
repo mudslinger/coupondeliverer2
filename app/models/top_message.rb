@@ -18,6 +18,10 @@ class TopMessage
       name: "Microsoft.SharePoint.DataService.専務メッセージItem",
       uri: "https://yamaokaya1.sharepoint.com/_vti_bin/listdata.svc/専務メッセージ()?$orderby=更新日時 desc&$top=50"
     },
+    magazine: {
+      name: "Microsoft.SharePoint.DataService.社内報",
+      uri: "https://yamaokaya1.sharepoint.com/_vti_bin/listdata.svc/社内報()?$orderby=更新日時 desc&$top=50"
+    },
     notice: {
       name: "Microsoft.SharePoint.DataService.連絡通達Item",
       uri: "https://yamaokaya1.sharepoint.com/_vti_bin/listdata.svc/連絡通達()?$orderby=更新日時 desc&$top=50"
@@ -30,8 +34,11 @@ class TopMessage
         "wb/ymticon.png"
       when "Microsoft.SharePoint.DataService.専務メッセージItem"
         "wb/144icon.png"
+      when "Microsoft.SharePoint.DataService.社内報Item"
+        "wb/hqicon.png"
       when "Microsoft.SharePoint.DataService.連絡通達Item"
         "wb/hqicon.png"
+
     end
   end
 
@@ -45,13 +52,15 @@ class TopMessage
         "President"
       when "Microsoft.SharePoint.DataService.専務メッセージItem"
         "Md144"
+      when "Microsoft.SharePoint.DataService.社内報Item"
+        "Magazine"
       when "Microsoft.SharePoint.DataService.連絡通達Item"
         "Notify"
     end
   end
 
   def self.articles(type)
-    Rails.cache.fetch(topmessage_type: type,expires_in: 5.minutes) do
+    Rails.cache.fetch(topmessage_type: type,expires_in: 4.minutes) do
       TopMessage.load(TYPES[type][:uri])
     end
   end

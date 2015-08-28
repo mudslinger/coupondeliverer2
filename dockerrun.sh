@@ -1,0 +1,1 @@
+docker run  -i -t  -p 80:3000 -v /mnt/hgfs/development/coupondeliverer2:/usr/src/app/coupondeliverer2 mudslinger/yamacoupon bundle exec rails s

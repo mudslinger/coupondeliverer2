@@ -8,7 +8,7 @@ defaults: &defaults
   # password: 003tk333
   adapter: postgresql
   encoding: unicode
-  host: yamgresql.c5uthvjn4chs.ap-northeast-1.rds.amazonaws.com
+  host: pgsql.yamaokaya.local
   pool: 5
   port: 5432
   reconnect: false

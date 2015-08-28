@@ -1,0 +1,28 @@
+!!! 5
+%html(lang="ja")
+  %head
+    %title 新着記事一覧
+    = stylesheet_link_tag "application", media: "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body.all
+    - @entries.each do |k,entry|
+      .headerArea
+        .lf
+          %h2
+            = image_tag entry[:current].icon
+            = truncate(entry[:current].title,:length => 24)
+            = image_tag 'new.gif' if entry[:current].new?
+        .rf
+          %a{href:entry[:current].src_uri,target:"sharepoint"}
+            別ウィンドウで見る
+      .block
+        .tb.contentsArea{data:{idx: entry[:idx],type:k}}
+          =raw(entry[:current].body)
+      .tb.footerArea
+        .lf
+          - if entry[:prev].present?
+            %a{class: :pager,href: "all.html",data:{add:-1,type:k}}="←#{truncate(entry[:prev].title,:length => 15)}"
+        .rf
+          - if entry[:next].present?
+            %a{class: :pager,href: "all.html",data:{add:1,type:k}}="#{truncate(entry[:next].title,:length => 15)}→"
