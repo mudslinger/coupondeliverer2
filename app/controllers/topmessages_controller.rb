@@ -29,7 +29,7 @@ class TopmessagesController < ApplicationController
   def show_all
     set_header 'ALLOW-FROM http://winboardkintai.yamaokaya.biz/'
 
-    @types = {president: 0,md144: 0,magazine:0,notice:0}
+    @types = {president: 0,md144: 0,notice:0,magazine:0}
     params.each do |k,v|
         @types[k.to_sym] = v.to_i if v =~ /[0-9]/
     end if params.present?
