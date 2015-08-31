@@ -27,7 +27,7 @@ class TopmessagesController < ApplicationController
   end
 
   def show_all
-    set_header 'ALLOW-FROM http://winboardkintai.yamaokaya.biz/'
+    set_header 'ALLOW-FROM http://ec9.winboard.jp/'
 
     @types = {president: 0,md144: 0,notice:0,magazine:0}
     params.each do |k,v|
