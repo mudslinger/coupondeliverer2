@@ -52,7 +52,7 @@ class TopMessage
         "President"
       when "Microsoft.SharePoint.DataService.専務メッセージItem"
         "Md144"
-      when "Microsoft.SharePoint.DataService.社内報Item"
+      when "Microsoft.SharePoint.DataService.掲示板（重要）Item"
         "Magazine"
       when "Microsoft.SharePoint.DataService.社内報・連絡・通達Item"
         "Notify"
