@@ -19,12 +19,12 @@ class TopMessage
       uri: "https://yamaokaya1.sharepoint.com/_vti_bin/listdata.svc/専務メッセージ()?$orderby=更新日時 desc&$top=50"
     },
     magazine: {
-      name: "Microsoft.SharePoint.DataService.社内報",
-      uri: "https://yamaokaya1.sharepoint.com/_vti_bin/listdata.svc/社内報()?$orderby=更新日時 desc&$top=50"
+      name: "Microsoft.SharePoint.DataService.掲示板（重要）",
+      uri: "https://yamaokaya1.sharepoint.com/_vti_bin/listdata.svc/掲示板（重要）()?$orderby=更新日時 desc&$top=50"
     },
     notice: {
-      name: "Microsoft.SharePoint.DataService.連絡通達Item",
-      uri: "https://yamaokaya1.sharepoint.com/_vti_bin/listdata.svc/連絡通達()?$orderby=更新日時 desc&$top=50"
+      name: "Microsoft.SharePoint.DataService.社内報・連絡・通達Item",
+      uri: "https://yamaokaya1.sharepoint.com/_vti_bin/listdata.svc/社内報・連絡・通達()?$orderby=更新日時 desc&$top=50"
     }
   }.freeze
 
@@ -34,9 +34,9 @@ class TopMessage
         "wb/ymticon.png"
       when "Microsoft.SharePoint.DataService.専務メッセージItem"
         "wb/144icon.png"
-      when "Microsoft.SharePoint.DataService.社内報Item"
+      when "Microsoft.SharePoint.DataService.掲示板（重要）Item"
         "wb/hqicon.png"
-      when "Microsoft.SharePoint.DataService.連絡通達Item"
+      when "Microsoft.SharePoint.DataService.社内報・連絡・通達Item"
         "wb/hqicon.png"
 
     end
@@ -54,7 +54,7 @@ class TopMessage
         "Md144"
       when "Microsoft.SharePoint.DataService.社内報Item"
         "Magazine"
-      when "Microsoft.SharePoint.DataService.連絡通達Item"
+      when "Microsoft.SharePoint.DataService.社内報・連絡・通達Item"
         "Notify"
     end
   end
