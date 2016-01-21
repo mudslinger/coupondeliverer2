@@ -53,9 +53,9 @@ class TopMessage
       when "Microsoft.SharePoint.DataService.専務メッセージItem"
         "Md144"
       when "Microsoft.SharePoint.DataService.社内報Item"
-        "Magazine"
-      when "Microsoft.SharePoint.DataService.連絡通達Item"
         "Notify"
+      when "Microsoft.SharePoint.DataService.連絡通達Item"
+        "Magazine"
     end
   end
 
