@@ -63,7 +63,7 @@ class TopMessage
     Rails.cache.fetch(topmessage_type: type,expires_in: 4.minutes) do
       if type === :president then
         dtmp = Date.today.strftime('%Y-%m-%d')
-        TopMessage.load("#{TYPES[type][:uri]}?$filter=公開日 gt DateTime'#{dtmp}'&$orderby=更新日時 desc&$top=50")    
+        TopMessage.load("#{TYPES[type][:uri]}?$filter=公開日 le DateTime'#{dtmp}'&$orderby=更新日時 desc&$top=50")    
       else
         TopMessage.load("#{TYPES[type][:uri]}?$orderby=更新日時 desc&$top=50")
       end
