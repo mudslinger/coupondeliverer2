@@ -61,7 +61,8 @@ class TopMessage
 
   def self.articles(type)
     Rails.cache.fetch(topmessage_type: type,expires_in: 4.minutes) do
-      TopMessage.load(TYPES[type][:uri] + "?$filter=公開日 le DateTime'#{Date.today.strftime('%Y-%m-%d')}'&$orderby=更新日時 desc&$top=50")
+      dtmp = Date.today.strftime('%Y-%m-%d')
+      TopMessage.load(TYPES[type][:uri] + "?$filter=公開日 le DateTime'#{dtmp}' &$orderby=更新日時 desc&$top=50")
     end
   end
 
