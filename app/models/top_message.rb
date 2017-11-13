@@ -12,19 +12,19 @@ class TopMessage
   TYPES = {
     president: {
       name: "Microsoft.SharePoint.DataService.社長メッセージItem",
-      uri: "https://yamaokaya1.sharepoint.com/_vti_bin/listdata.svc/社長メッセージ()?$orderby=更新日時 desc&$top=50"
+      uri: "https://yamaokaya1.sharepoint.com/_vti_bin/listdata.svc/社長メッセージ()"
     },
     md144: {
       name: "Microsoft.SharePoint.DataService.専務メッセージItem",
-      uri: "https://yamaokaya1.sharepoint.com/_vti_bin/listdata.svc/専務メッセージ()?$orderby=更新日時 desc&$top=50"
+      uri: "https://yamaokaya1.sharepoint.com/_vti_bin/listdata.svc/専務メッセージ()"
     },
     magazine: {
       name: "Microsoft.SharePoint.DataService.社内報",
-      uri: "https://yamaokaya1.sharepoint.com/_vti_bin/listdata.svc/社内報()?$orderby=更新日時 desc&$top=50"
+      uri: "https://yamaokaya1.sharepoint.com/_vti_bin/listdata.svc/社内報()"
     },
     notice: {
       name: "Microsoft.SharePoint.DataService.連絡通達Item",
-      uri: "https://yamaokaya1.sharepoint.com/_vti_bin/listdata.svc/連絡通達()?$orderby=更新日時 desc&$top=50"
+      uri: "https://yamaokaya1.sharepoint.com/_vti_bin/listdata.svc/連絡通達()"
     }
   }.freeze
 
@@ -61,7 +61,7 @@ class TopMessage
 
   def self.articles(type)
     Rails.cache.fetch(topmessage_type: type,expires_in: 4.minutes) do
-      TopMessage.load(TYPES[type][:uri])
+      TopMessage.load(TYPES[type][:uri] + "?$filter=公開日 le DateTime'#{Date.today.strftime('%Y-%m-%d')}'&$orderby=更新日時 desc&$top=50")
     end
   end
 
