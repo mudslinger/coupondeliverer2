@@ -6,15 +6,15 @@ defaults: &defaults
   # database: hp2014
   # username: root
   # password: 003tk333
-  adapter: postgresql
-  encoding: unicode
-  host: pgsql.yamaokaya.local
-  pool: 5
-  port: 5432
-  reconnect: false
-  database: yamaokaya
-  username: root
-  password: 003tk333
+#   adapter: postgresql
+#   encoding: unicode
+#   host: pgsql.yamaokaya.local
+#   pool: 5
+#   port: 5432
+#   reconnect: false
+#   database: yamaokaya
+#   username: root
+#   password: 003tk333
 
 development:
   <<: *defaults
